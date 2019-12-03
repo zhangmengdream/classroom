@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/gifts.css')}}">
+{% endblock %}
+{% block content %}
+<div >
+     <br/>
+        <span style="margin-left: 400px; margin-top: 25px; font-size: 25px">上传视频</span>
+<br/><br/>
+</div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 flex-vertical personal-detail">
+        <form action="" method="post">
+
+            <input style="width:100%" id="title" name="title" type="text"
+                   placeholder="标题"
+                   class="none-input"
+                   value="{{ form.data['title'] | default('',true) }}">
+
+
+            <input style="width:100%" id="author" name="author" type="text"
+                   placeholder="作者"
+                   class="none-input"
+                   value="{{ form.data['author'] | default('',true) }}">
+
+
+            <input style="width:100%" id="number" name="number" type="text"
+                   placeholder="集数"
+                   class="none-input"
+                   value="{{ form.data['number'] | default('',true) }}">
+
+
+            <input style="width:100%" id="abstract" name="abstract" type="text"
+                   placeholder="简介"
+                   class="none-input"
+                   value="{{ form.data['abstract'] | default('',true) }}">
+
+
+            <input style="width:100%" id="classify" name="classify" type="text"
+                   placeholder="视频归类"
+                   class="none-input"
+                   value="{{ form.data['classify'] | default('',true) }}">
+
+
+            <tr>
+                <td>头像：</td>
+                <input type="file" name="image" value="{{ form.data['image'] | default('',true) }}">
+            </tr>
+            <tr>
+                <td>上传视频文件：</td>
+                <input type="file" name="video" value="{{ form.data['video'] | default('',true) }}">>
+
+            </tr>
+
+
+
+
+
+            <!--<input style="width:100%" id="image" name="image" type="text"-->
+                   <!--placeholder="封面图"-->
+                   <!--class="none-input"-->
+                   <!--value="{{ form.data['image'] | default('',true) }}">-->
+
+
+            <!--<input style="width:100%" id="video" name="video" type="text"-->
+                   <!--placeholder="上传视频文件"-->
+                   <!--class="none-input"-->
+                   <!--value="{{ form.data['video'] | default('',true) }}">-->
+
+
+            <input style="margin-top:15px;" id="btn-submit" type="submit"
+                   class="btn btn-big btn-block" value="提交">
+        </form>
+    </div>
+</div>
+{% endblock %}
